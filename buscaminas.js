@@ -23,8 +23,24 @@ function mostrarBomba(){
   miImagen.setAttribute("width","25px");
   miImagen.setAttribute("height","25px");
   this.appendChild(miImagen);
+
+  alert("GAME OVER \n Esto ha Explotado!!");
+  bloquearBotones();
 }
 function cambiarColor(){
 
   this.style.backgroundColor = "#C3F3D7"
 }
+function bloquearBotones(){
+  for (i=0; i<botonNumero.length; i++){
+    botonNumero[i].removeEventListener("click", mostrarNumero);
+  }
+  for (i=0; i<botonBomba.length; i++){
+    botonBomba[i].removeEventListener("click", mostrarBomba);
+  }
+  for (i=0; i<botonCambiarColor.length; i++){
+    botonCambiarColor[i].removeEventListener("click", cambiarColor);
+  }
+}
+var botonReinicio = document.getElementById("botonReinicio");
+botonReinicio.addEventListener("click", reiniciarJuego);
