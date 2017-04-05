@@ -44,3 +44,14 @@ function bloquearBotones(){
 }
 var botonReinicio = document.getElementById("botonReinicio");
 botonReinicio.addEventListener("click", reiniciarJuego);
+function reiniciarJuego(){
+    for (i=0; i<botonNumero.length; i++){
+      botonNumero[i].innerText = "";
+    }
+    for (i=0; i<botonBomba.length; i++){
+      botonBomba[i].removeChild(miImagen);
+    }
+    for (i=0; i<botonCambiarColor.length; i++){
+        botonCambiarColor[i].style.backgroundColor = "white"
+    }
+}
